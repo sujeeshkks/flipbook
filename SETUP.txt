@@ -29,7 +29,9 @@ INSTALL IN WINDOWS
 
 9. Download the cpdf.exe from http://community.coherentpdf.com/ and put inside \wamp\www\flipbook\resources\ Directory.
 
-10. Restart WAMP Server and browse http;//localhost/flipbook/index.html. :)
+10. Add a loader animation image loader.gif to the flipbook\resources\ directory.
+
+11. Restart WAMP Server and browse http;//localhost/flipbook/index.html. :)
 
 WorkFlow
 --------
