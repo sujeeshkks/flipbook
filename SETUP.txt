@@ -1,0 +1,56 @@
+Flipbook 1.0
+============
+
+INSTALL IN WINDOWS
+------------------
+1. Install Visual C++ redistributable package.
+
+2. Install GhosttScript.
+- http://www.ghostscript.com/download/gsdnld.html
+
+3. Install ImageMagick.
+- http://www.imagemagick.org/script/binary-releases.php#windows
+- Download the the filename ending with '-dll.exe'.
+
+4. Install WAMP Server that will include PHP.
+- http://www.wampserver.com/en/
+- Download the WAMP Server which includes PHP 5.4.
+
+5. Download the PHP-ImageMagick dll from http://windows.php.net/downloads/pecl/releases/imagick/3.2.0b1/
+- Download version for PHP 5.4 with ts version. The name will be like php_imagick-3.2.0b1-5.4-ts-vc9-x86.zip
+
+6. Extract the archive and Rename the dll to php_imagick.dll and copy to your PHP extention folder. This will be \wamp\bin\php\php5.4\ext\ folder.
+
+7. Add the following line to the php.ini folder in the extension section. There will be two php.ini files for WAMP.
+   They are \wamp\bin\php\php5.4\php.ini and \wamp\bin\apache\Apache2.4.4\bin\php.ini Add this line in both files in the extension section.
+   extension=php_imagick.dll
+
+8. Put the flipbook folder inside \wamp\www\ folder and verify \flipbook\Root.php contains correct path..
+
+9. Download the cpdf.exe from http://community.coherentpdf.com/ and put inside \wamp\www\flipbook\resources\ Directory.
+
+10. Restart WAMP Server and browse http;//localhost/flipbook/index.html. :)
+
+WorkFlow
+--------
+1. Uplaod the pdf file from index.html and clear old data from \flipbook\book\ directory..
+2. Save the uploded file to \flipbook\book\ with randome name.
+3. Redirects to flipbook.html with file name in URL.
+4. Request 2 pages first using AJAX.
+5. Convert pdf into images and save that in \flipbook\book\ directory.
+6. Send the image path to UI and Add that image to UI.
+7. When turning a page request for two more pages using AJAX.
+
+Files Explained
+---------------
+1. index.html			- Uplaods pdf file.
+2. flipbook.html		- Shows the flipbook.
+3. flipbook.js			- All javascript code to add new pages.
+4. ImageLoader.php		- Get the number of pages using cpdf tool to define the total number of pages in flipbook.
+5. ImageGenerator.php		- Get the user request and convert the request pages from pdf o image using imagemagick and GhostScript and return the path to UI.
+6. Root.php			- To store the root path of your application.
+7. PdfUploader.php		- Uploads the pdf file.
+
+Any Queries?
+------------
+Mail me at kpsujeesh@gmail.com

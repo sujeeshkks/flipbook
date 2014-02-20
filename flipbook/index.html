@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome to Flipbook|Sneaker_55</title>
+</head>
+<body>
+<div style="width:450px; height:500; margin-left:auto; margin-right:auto;padding-top:50px">
+	<div><h3 style="font-family:monospace; font-size:26px; color:#FDADCA">PHP - Turn.JS - FlipBook</h3><br/></div>
+	<h3 style="font-family:monospace; font-size:20px; color:green">&nbsp Select PDF File to Read</h3><br/>
+	<form action="PdfUploader.php" method="post" enctype="multipart/form-data" onsubmit="return Check();">
+		<input type="file" name="pdffile" id="pdffile"/>
+		<input type="submit" value="Read PDF" name="pdf_uploader" />
+	</form>
+	<div style="font-family:monospace;color:grey;margin-left:auto;margin-right:auto;width:300;padding-top:100px;padding-left:100px">kpsujeesh@gmail.com</div>
+</div>
+<script>
+function Check()
+{
+var fileName = document.getElementById('pdffile').value;
+if(fileName!="")
+{
+	var ext = fileName.substring(fileName.lastIndexOf('.') + 1);
+	if(ext == "pdf" || ext == "PDF")
+		return true;
+	else
+		alert("PDF Files Only..!");
+}
+return false;
+}
+</script>
+</body>
+</html>
